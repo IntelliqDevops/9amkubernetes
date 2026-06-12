@@ -2,14 +2,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mysql-deployment
+  name: blue-mysql-deployment
   labels:
     app: db
     author: intelliqit
 spec:
-  replicas: 2
-  strategy:
-    type: Recreate
+  replicas: 3
   selector:
     matchLabels:
       app: db

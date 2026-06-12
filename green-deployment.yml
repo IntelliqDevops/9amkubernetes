@@ -2,14 +2,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mysql-deployment
+  name: green-mysql-deployment
   labels:
     app: db
     author: intelliqit
 spec:
-  replicas: 2
-  strategy:
-    type: Recreate
+  replicas: 1
   selector:
     matchLabels:
       app: db
@@ -21,7 +19,7 @@ spec:
     spec:
       containers:
         - name: mydb
-          image: mysql:8
+          image: mysql:9
           env:
             - name: MYSQL_ROOT_PASSWORD
               value: intelliqit
