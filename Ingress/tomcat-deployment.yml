@@ -2,12 +2,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp-deployment
+  name: tomcat-deployment
   labels:
     app: appserver
-    author: intelliqit
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: appserver
@@ -18,6 +17,7 @@ spec:
         app: appserver
     spec:
       containers:
-        - name: myapp
-          image: intelliqit/myapp
+        - name: mytomcat
+          image: tomee
 ...
+

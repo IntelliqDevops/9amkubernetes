@@ -2,15 +2,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: loadbalancer-service
+  name: nginx-service
   labels:
     author: intelliqit
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   ports:
-    - targetPort: 8080
+    - targetPort: 80
       port: 80
-      nodePort: 30009
   selector:
-    app: appserver
+    app: nginx
 ...
+
